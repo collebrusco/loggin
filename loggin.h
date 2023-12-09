@@ -13,14 +13,14 @@ extern "C" {
 		#define epre "[[ERROR]:_NAME_]: " \
 		#include <stdio.h> \
 		#if LOGGIN_LOG_LEVEL >= LOGGIN_DEBUG \
-		    #define LOG_DEBUG(fmt, ...) printf(dpre fmt, ##__VA_ARGS__) \
+		    #define LOG_DBG(fmt, ...) printf(dpre fmt, ##__VA_ARGS__) \
 		#else \
-		    #define LOG_DEBUG(fmt, ...) \
+		    #define LOG_DBG(fmt, ...) \
 		#endif \
 		#if LOGGIN_LOG_LEVEL >= LOGGIN_INFO \
-		    #define LOG_INFO(fmt, ...) printf(ipre fmt, ##__VA_ARGS__) \
+		    #define LOG_INF(fmt, ...) printf(ipre fmt, ##__VA_ARGS__) \
 		#else \
-		    #define LOG_INFO(fmt, ...) \
+		    #define LOG_INF(fmt, ...) \
 		#endif \
 		#if LOGGIN_LOG_LEVEL >= LOGGIN_WARN \
 		    #define LOG_WARN(fmt, ...) printf(wpre fmt, ##__VA_ARGS__) \
@@ -28,9 +28,9 @@ extern "C" {
 		    #define LOG_WARN(fmt, ...) \
 		#endif \
 		#if LOGGIN_LOG_LEVEL >= LOGGIN_ERROR \
-		    #define LOG_ERROR(fmt, ...) printf(epre fmt, ##__VA_ARGS__) \
+		    #define LOG_ERR(fmt, ...) printf(epre fmt, ##__VA_ARGS__) \
 		#else \
-		    #define LOG_ERROR(fmt, ...) \
+		    #define LOG_ERR(fmt, ...) \
 		#endif \
 #else
 	#define LOGGIN_MODULE_REGISTER(name)
